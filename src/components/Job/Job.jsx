@@ -1,10 +1,10 @@
 
 import { MdLocationOn } from "react-icons/md";
-import { AiOutLineDollar } from "react-icons/ai";
+import { AiOutlineDollar } from "react-icons/ai";
 
 
 const Job = ({ job }) => {
-  const { logo,job_title,company_name,location,remote_or_onsite,job_type, salary } = job;
+  const { id,logo,job_title,company_name,location,remote_or_onsite,job_type, salary } = job;
   return (
     <div>
       <div className="card card-compact bg-base-100  shadow-xl">
@@ -23,10 +23,12 @@ const Job = ({ job }) => {
           </div>
           <div className="mt-4 flex">
             <h2 className="flex "><MdLocationOn className="text-2xl mr-2"></MdLocationOn> {location}</h2>
-            <h2 className="flex"><AiOutLineDollar className="text-2xl mr-2 " ></AiOutLineDollar> {salary}</h2>
+            <h2 className="flex"><AiOutlineDollar className="text-2xl mr-2 " ></AiOutlineDollar> {salary}</h2>
           </div>
           <div className="card-actions ">
+            <Link to={`/job/${id}`}>
             <button className="btn btn-primary">View Details</button>
+            </Link>
           </div>
         </div>
       </div>
